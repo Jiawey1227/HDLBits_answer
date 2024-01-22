@@ -4,7 +4,7 @@ module top_module (
     output [3:0] q);
 
     always @(posedge clk) begin
-        if (reset | q == 4'd10) begin
+        if (reset | q == 4'd9) begin
             q <= 4'd0;
         end
         else begin

@@ -8,15 +8,8 @@ module top_module (
     output [3:0] c_d
 ); //
     assign c_enable = enable;
-    always @(posedge clk) begin
-        if (reset | Q == 12) begin
-            c_load <= 0 ;
-            c_d <= 1;  
-        end
-        else begin
-            c_load <= 1;
-        end
-    end
+    assign c_load = reset | (Q == 4'd12 & enable == 1);
+    assign c_d = 4'd1;
 
     count4 the_counter (clk, c_enable, c_load, c_d, Q);
 
