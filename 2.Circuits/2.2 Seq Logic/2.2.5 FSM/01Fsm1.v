@@ -1,3 +1,4 @@
+// Moore fsm
 module top_module(
     input clk,
     input areset,    // Asynchronous reset to state B
@@ -10,8 +11,8 @@ module top_module(
     always @(*) begin    // This is a combinational always block
         // State transition logic
         case (state)
-            A: next_state <= in?A:B;
-            B: next_state <= in?B:A;
+            A: next_state = in?A:B;
+            B: next_state = in?B:A;
         endcase
     end
 
