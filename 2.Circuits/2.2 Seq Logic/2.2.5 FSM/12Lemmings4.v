@@ -100,7 +100,7 @@ module top_module(
                     if (flag) begin
                         next_state = SPLATTER;
                     end else begin
-                        next_state = LEFT
+                        next_state = LEFT;
                     end
                 end else begin
                     next_state = state;
